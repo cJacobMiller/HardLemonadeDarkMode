@@ -1,3 +1,8 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   --kite-blue-2: '#0073d1';
   --kite-blue-1: '#0d92ff';
@@ -26,6 +31,7 @@ html {
     --color-primary: var(--kite-blue-1);
     --color-secondary: var(--kite-blue-2);
     --color-tertiary: var(--kite-blue-3);
+    min-height: 100vh;
   }
 }
 

@@ -1,3 +1,21 @@
-.whatever {
-  background-color: var(--background);
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: var(--site-background);
+
+  app-site-header {
+    flex: 0;
+
+    background-color: red;
+  }
+
+  main {
+    flex: 1;
+  }
+  app-site-footer {
+    background-color: blue;
+  }
 }
