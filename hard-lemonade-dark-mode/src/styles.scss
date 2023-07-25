@@ -1,11 +1,36 @@
+html {
+  --kite-blue-2: '#0073d1';
+  --kite-blue-1: '#0d92ff';
+  --kite-blue-3: '#0062b2';
+  --kite-light-blue: '#b7cee5';
+  --kite-dark-blue-1: '#004366';
+  --kite-dark-blue-2: '#002133';
+  --kite-dark-blue-3: '#001019';
+  --kite-gold: '#ffd400';
+  --kite-green: '#00bf1f';
+  --kite-dark-green: '#008516';
+  --kite-red: '#ff4d4a';
+  --kite-dark-red: '#d6312b';
+  --kite-white: '#fff';
+  --kite-gray-1: '#f8f8f8';
+  --kite-gray-2: '#d8dde6';
+  --kite-gray-3: '#63738a';
+  --kite-black: '#000';
+}
+
 @media (prefers-color-scheme: light) {
   body {
-    --background: blue;
+    --site-background: var(--kite-white);
+    --text-light: var(--kite-white);
+    --text-dark: var(--kite-black);
+    --color-primary: var(--kite-blue-1);
+    --color-secondary: var(--kite-blue-2);
+    --color-tertiary: var(--kite-blue-3);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    --background: black;
+    --site-background: black;
   }
 }
