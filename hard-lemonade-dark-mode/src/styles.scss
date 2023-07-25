@@ -5,6 +5,7 @@ body {
 }
 
 html {
+  // Kite colors from spectrum-libraries/projects/spectrum-components/src/lib/services/brand-colors/brand-colors-export.ts
   --kite-blue-2: #0073d1;
   --kite-blue-1: #0d92ff;
   --kite-blue-3: #0062b2;
@@ -36,13 +37,14 @@ html {
   }
 }
 
+// Dark mode colors from: https://chalk.charter.com/display/DIGPLATF0RMS/Step+by+Step+Guide+iOS+page+to+Dark+Mode
 @media (prefers-color-scheme: dark) {
   body {
-    --site-background: var(--kite-dark-blue-1);
+    --site-background: var(--kite-dark-blue-3);
     --text-light: var(--kite-white);
     --text-dark: var(--kite-black);
     --color-primary: var(--kite-dark-blue-2);
-    --color-secondary: var(--kite-gray-2);
+    --color-secondary: var(--kite-dark-blue-1);
     --color-tertiary: var(--kite-gray-3);
     min-height: 100vh;
   }
