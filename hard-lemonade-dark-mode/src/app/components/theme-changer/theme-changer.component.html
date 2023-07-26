@@ -1,0 +1,7 @@
+<h3>Change Your Theme</h3>
+<select (change)="themeChange($event)">
+  <option value="default">----</option>
+  <option *ngFor="let theme of themes" [value]="theme">
+    {{ theme }}
+  </option>
+</select>
