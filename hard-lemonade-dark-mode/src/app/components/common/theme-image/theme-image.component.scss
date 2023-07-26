@@ -1,0 +1,10 @@
+@use '../../../scss/use';
+
+// TODO HostBinding for css vars for width, height, other?
+
+:host {
+  img {
+    width: var(--width);
+    height: var(--height);
+  }
+}
