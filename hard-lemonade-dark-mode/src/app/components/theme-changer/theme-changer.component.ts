@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { ThemeService } from 'src/app/services/theme/theme.service';
+import { Themes } from 'src/app/models/themes';
 @Component({
   selector: 'app-theme-changer',
   templateUrl: './theme-changer.component.html',
@@ -7,13 +8,13 @@ import { Component } from '@angular/core';
 })
 export class ThemeChangerComponent {
   themes = [
-    'Light (standard)',
-    'Light (blue nav)',
-    'Dark (standard)',
-    'Dark (blue nav)',
+    { title: 'Light (standard)', value: Themes.LIGHT },
+    { title: 'Light (blue nav)', value: Themes.LIGHT_BLUE_NAV },
+    { title: 'Dark (standard)', value: Themes.DARK },
+    { title: 'Dark (blue nav)', value: Themes.DARK_BLUE_NAV },
   ];
 
-  themeChange(e: any) {
-    console.log(e.target.value);
-  }
+  constructor(private themeService: ThemeService) {}
+
+  themeChange = (e: any) => this.themeService.invokeThemeChange(e.target.value);
 }

@@ -4,10 +4,9 @@ import { Themes } from 'src/app/models/themes';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
-
   public currentTheme$: Subject<Themes> = new Subject();
 
   private window: Window;
@@ -20,13 +19,17 @@ export class ThemeService {
     this.window = windowFromInjectedDocument;
 
     // subscribe to changes from Media Query
-    const darkModeQuery = !!this.window.matchMedia && this.window.matchMedia('(prefers-color-scheme: dark');
+    const darkModeQuery =
+      !!this.window.matchMedia &&
+      this.window.matchMedia('(prefers-color-scheme: dark');
     darkModeQuery.addEventListener('change', this.handleThemeChange);
   }
 
   public getCurrentTheme(): Themes {
     // Use the matchMedia query to detect Theme
-    const themeDark = !!this.window.matchMedia && this.window.matchMedia('(prefers-color-scheme: dark').matches;
+    const themeDark =
+      !!this.window.matchMedia &&
+      this.window.matchMedia('(prefers-color-scheme: dark').matches;
 
     // TODO some way to override this using UI controls so we can have Light, Dark, Light w/new Nav, Dark w/new Nav?
     return themeDark ? Themes.DARK : Themes.LIGHT;
@@ -38,4 +41,7 @@ export class ThemeService {
     this.currentTheme$?.next(theme);
   }
 
+  public invokeThemeChange(theme: Themes) {
+    this.currentTheme$?.next(Themes.DARK);
+  }
 }
