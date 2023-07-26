@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light dark;
+}
+
 html {
   // Kite colors from spectrum-libraries/projects/spectrum-components/src/lib/services/brand-colors/brand-colors-export.ts
   --kite-blue-1: #0d92ff;
@@ -26,31 +30,25 @@ html {
 body {
   background-color: var(--color-site-bg);
   color: var(--color-site);
-}
 
-@media (prefers-color-scheme: light) {
-  body {
-    --color-primary: var(--kite-blue-1);
-    --color-secondary: var(--kite-blue-2);
-    --color-tertiary: var(--kite-blue-3);
+  // default light mode styles
+  --color-primary: var(--kite-blue-1);
+  --color-secondary: var(--kite-blue-2);
+  --color-tertiary: var(--kite-blue-3);
 
-    --color-site: var(--color-text-dark);
-    --color-site-bg: var(--kite-gray-1);
-    --color-header: var(--color-text-dark);
-    --color-header-bg: var(--kite-white);
-    --color-footer: var(--color-text-light);
-    --color-footer-bg: var(--kite-dark-blue-3);
+  --color-site: var(--color-text-dark);
+  --color-site-bg: var(--kite-gray-1);
+  --color-header: var(--color-text-dark);
+  --color-header-bg: var(--kite-white);
+  --color-footer: var(--color-text-light);
+  --color-footer-bg: var(--kite-dark-blue-3);
 
-    --color-content1: var(--color-text-dark);
-    --color-content1-bg: var(--kite-white);
-    --color-content2: var(--color-text-dark);
-    --color-content2-bg: var(--kite-gray-2);
-  }
-}
+  --color-content1: var(--color-text-dark);
+  --color-content1-bg: var(--kite-white);
+  --color-content2: var(--color-text-dark);
+  --color-content2-bg: var(--kite-gray-2);
 
-// Dark mode colors from: https://chalk.charter.com/display/DIGPLATF0RMS/Step+by+Step+Guide+iOS+page+to+Dark+Mode
-@media (prefers-color-scheme: dark) {
-  body {
+  &.dark-mode {
     --color-primary: var(--kite-dark-blue-1);
     --color-secondary: var(--kite-dark-blue-2);
     --color-tertiary: var(--kite-dark-blue-3);
@@ -67,5 +65,43 @@ body {
     --color-content2: var(--color-text-light);
     --color-content2-bg: var(--kite-dark-blue-1);
   }
-}
 
+  &.os-theme-mode {
+    @media (prefers-color-scheme: light) {
+      --color-primary: var(--kite-blue-1);
+      --color-secondary: var(--kite-blue-2);
+      --color-tertiary: var(--kite-blue-3);
+
+      --color-site: var(--color-text-dark);
+      --color-site-bg: var(--kite-gray-1);
+      --color-header: var(--color-text-dark);
+      --color-header-bg: var(--kite-white);
+      --color-footer: var(--color-text-light);
+      --color-footer-bg: var(--kite-dark-blue-3);
+
+      --color-content1: var(--color-text-dark);
+      --color-content1-bg: var(--kite-white);
+      --color-content2: var(--color-text-dark);
+      --color-content2-bg: var(--kite-gray-2);
+    }
+
+    // Dark mode colors from: https://chalk.charter.com/display/DIGPLATF0RMS/Step+by+Step+Guide+iOS+page+to+Dark+Mode
+    @media (prefers-color-scheme: dark) {
+      --color-primary: var(--kite-dark-blue-1);
+      --color-secondary: var(--kite-dark-blue-2);
+      --color-tertiary: var(--kite-dark-blue-3);
+
+      --color-site: var(--color-text-light);
+      --color-site-bg: var(--kite-dark-blue-3);
+      --color-header: var(--color-text-light);
+      --color-header-bg: var(--kite-dark-blue-2);
+      --color-footer: var(--color-text-light);
+      --color-footer-bg: var(--kite-light-blue);
+
+      --color-content1: var(--color-text-light);
+      --color-content1-bg: var(--kite-dark-blue-2);
+      --color-content2: var(--color-text-light);
+      --color-content2-bg: var(--kite-dark-blue-1);
+    }
+  }
+}

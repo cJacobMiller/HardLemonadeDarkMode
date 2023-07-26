@@ -1,8 +1,12 @@
 @use "../../../scss/use";
 
-:host {
+.page-container {
   display: block;
   @include use.page();
+
+  display: flex;
+  flex-direction: column;
+
 
   .content-lvl1-example {
     @include use.content-lvl1();
