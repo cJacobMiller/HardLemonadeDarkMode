@@ -8,6 +8,7 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
 import { PageHomeComponent } from './components/pages/page-home/page-home.component';
 import { PageAboutComponent } from './components/pages/page-about/page-about.component';
 import { ThemeImageComponent } from './components/common/theme-image/theme-image.component';
+import { ThemeSelectorComponent } from './components/site-header/theme-selector/theme-selector.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ThemeImageComponent } from './components/common/theme-image/theme-image
     PageHomeComponent,
     PageAboutComponent,
     ThemeImageComponent,
+    ThemeSelectorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

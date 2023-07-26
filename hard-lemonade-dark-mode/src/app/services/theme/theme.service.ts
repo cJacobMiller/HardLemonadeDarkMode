@@ -42,4 +42,8 @@ export class ThemeService {
     const theme = event.matches ? Themes.DARK : Themes.LIGHT;
     this.currentTheme$.next(theme);
   }
+
+  public invokeThemeChange(theme: Themes) {
+    this.currentTheme$?.next(Themes.DARK);
+  }
 }
