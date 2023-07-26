@@ -6,17 +6,13 @@
   background-color: var(--site-background);
 
   app-site-header {
-    flex: 0;
-
-    background-color: var(--color-primary);
-    color: var(--text-light);
+    // note: positioning only here, all appearance contained in the component
   }
 
   main {
     flex: 1;
   }
   app-site-footer {
-    background-color: var(--color-primary);
-    color: var(--text-light);
+    // note: positioning only here, all appearance contained in the component
   }
 }

@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Rutledge-Medium';
+  src: url('/assets/fonts/rutledge-medium.svg') format('svg'), url('/assets/fonts/rutledge-medium.eot') format('eot'),
+    url('/assets/fonts/rutledge-medium.ttf') format('ttf'), url('/assets/fonts/rutledge-medium.woff') format('woff');
+}
+
+body {
+  font-family: 'Rutledge-Medium', sans-serif;
+  font-size: clamp(18px, 1vw, 24px);
+
+  h1, h2, h3, h4, h5 {
+
+  }
+}

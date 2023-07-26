@@ -1,7 +1,13 @@
-// light mode
-.component-background {
+@use '../../scss/use';
 
+header {
+  @include use.flex-row-center();
+  @include use.box-shadow-lvl1();
+
+  padding: clamp(1rem, 2vw, 2rem);
+  background-color: var(--color-content1-bg);
+
+  .header-logo {
+    width: clamp(10rem, 25vw, 30rem);
+  }
 }
-
-
-// dark mode

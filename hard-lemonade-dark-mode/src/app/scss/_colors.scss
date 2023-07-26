@@ -1,0 +1,67 @@
+html {
+  // Kite colors from spectrum-libraries/projects/spectrum-components/src/lib/services/brand-colors/brand-colors-export.ts
+  --kite-blue-1: #0d92ff;
+  --kite-blue-2: #0073d1;
+  --kite-blue-3: #0062b2;
+  --kite-light-blue: #b7cee5;
+  --kite-dark-blue-1: #004366;
+  --kite-dark-blue-2: #002133;
+  --kite-dark-blue-3: #001019;
+  --kite-gold: #ffd400;
+  --kite-green: #00bf1f;
+  --kite-dark-green: #008516;
+  --kite-red: #ff4d4a;
+  --kite-dark-red: #d6312b;
+  --kite-white: #fff;
+  --kite-gray-1: #f8f8f8;
+  --kite-gray-2: #d8dde6;
+  --kite-gray-3: #63738a;
+  --kite-black: #000;
+
+  // Site-wide
+  --color-text-light: var(--kite-white);
+  --color-text-dark: var(--kite-black);
+}
+
+body {
+  background-color: var(--color-site-bg);
+  color: var(--color-site);
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --color-primary: var(--kite-blue-1);
+    --color-secondary: var(--kite-blue-2);
+    --color-tertiary: var(--kite-blue-3);
+
+    --color-site: var(--color-text-dark);
+    --color-site-bg: var(--kite-gray-1);
+    --color-footer: var(--color-text-light);
+    --color-footer-bg: var(--kite-dark-blue-3);
+
+    --color-content1: var(--color-text-dark);
+    --color-content2: var(--color-text-dark);
+    --color-content1-bg: var(--kite-white);
+    --color-content2-bg: var(--kite-gray-2);
+  }
+}
+
+// Dark mode colors from: https://chalk.charter.com/display/DIGPLATF0RMS/Step+by+Step+Guide+iOS+page+to+Dark+Mode
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-primary: var(--kite-dark-blue-1);
+    --color-secondary: var(--kite-dark-blue-2);
+    --color-tertiary: var(--kite-dark-blue-3);
+
+    --color-site: var(--color-text-light);
+    --color-site-bg: var(--kite-dark-blue-3);
+    --color-footer: var(--color-text-light);
+    --color-footer-bg: var(--kite-light-blue);
+
+    --color-content1: var(--color-text-light);
+    --color-content1-bg: var(--kite-dark-blue-2);
+    --color-content2: var(--color-text-light);
+    --color-content2-bg: var(--kite-dark-blue-1);
+  }
+}
+

@@ -1,0 +1,10 @@
+@mixin box-shadow-lvl1 {
+  box-shadow: 0px 0px 10px -1px var(--kite-black);
+}
+
+@mixin flex-row-center() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

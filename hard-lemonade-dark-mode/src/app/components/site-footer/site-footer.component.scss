@@ -1,0 +1,13 @@
+@use '../../scss/use';
+
+footer {
+  @include use.flex-row-center();
+
+  padding: clamp(1rem, 2vw, 2rem);
+  color: var(--color-footer);
+  background-color: var(--color-footer-bg);
+
+  .footer-logo {
+    width: clamp(6rem, 7vw, 10rem);
+  }
+}
