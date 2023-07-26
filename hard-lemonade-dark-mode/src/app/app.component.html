@@ -1,4 +1,6 @@
-<div class="site-container">
+<div class="site-container"
+[ngClass]="{ 'dark-mode': true, 'os-theme-mode': true }"
+>
   <app-site-header></app-site-header>
   <main>
     <router-outlet></router-outlet>
