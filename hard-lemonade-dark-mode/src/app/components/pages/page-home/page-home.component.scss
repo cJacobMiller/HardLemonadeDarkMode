@@ -1,0 +1,10 @@
+@use "../../../scss/use";
+
+:host {
+  display: block;
+  @include use.page();
+
+  .content-lvl1-example {
+    @include use.content-lvl1();
+  }
+}

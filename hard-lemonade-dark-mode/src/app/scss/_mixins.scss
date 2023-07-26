@@ -1,5 +1,44 @@
+@use 'colors';
+
+@mixin page {
+  padding: 0 clamp(0.5rem, 2vw, 2rem);
+}
+
+@mixin content-box {
+  padding: clamp(1rem, 1.5vw, 2rem);
+  border-radius: 0.25rem;
+  *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+@mixin content-lvl1 {
+  @include content-box();
+  @include box-shadow-lvl1();
+  color: var(--color-content1);
+  background-color: var(--color-content1-bg);
+}
+
+@mixin content-lvl2 {
+  @include content-box();
+  @include box-shadow-lvl2();
+  color: var(--color-content2);
+  background-color: var(--color-content2-bg);
+}
+
 @mixin box-shadow-lvl1 {
-  box-shadow: 0px 0px 10px -1px var(--kite-black);
+  box-shadow: 0px 5px 5px -5px var(--kite-black);
+}
+@mixin box-shadow-lvl2 {
+  box-shadow: 0px 8px 8px -8px var(--kite-black);
+}
+@mixin box-shadow-lvl3 {
+  box-shadow: 0px 11px 11px -11px var(--kite-black);
 }
 
 @mixin flex-row-center() {
