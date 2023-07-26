@@ -8,7 +8,6 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
 import { PageHomeComponent } from './components/pages/page-home/page-home.component';
 import { PageAboutComponent } from './components/pages/page-about/page-about.component';
 import { ThemeImageComponent } from './components/common/theme-image/theme-image.component';
-import { ThemeChangerComponent } from './components/theme-changer/theme-changer.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +17,9 @@ import { ThemeChangerComponent } from './components/theme-changer/theme-changer.
     PageHomeComponent,
     PageAboutComponent,
     ThemeImageComponent,
-    ThemeChangerComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
