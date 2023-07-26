@@ -1,0 +1,7 @@
+@use "../../../scss/use";
+
+:host {
+  display: block;
+  @include use.page();
+
+}
