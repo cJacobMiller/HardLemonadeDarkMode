@@ -5,6 +5,7 @@ header {
   @include use.box-shadow-lvl1();
 
   padding: clamp(1rem, 2vw, 2rem);
+  color: var(--color-header);
   background-color: var(--color-header-bg);
 
   .header-logo {
