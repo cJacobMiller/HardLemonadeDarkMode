@@ -2,8 +2,8 @@
 
 This project demonstrates some methods of applying theming to an Angular project, specifically:
 1. colors & styles changing based on OS dark mode setting
-2. TODO - images switching based on theme
-3. TODO - form elements styled based on theme
+2. images switching based on theme
+3. form elements styled based on theme
 4. TODO - theme override applied from UI
 
 ---
