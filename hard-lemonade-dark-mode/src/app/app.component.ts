@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme/theme.service';
+import { Themes } from './models/themes';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,18 @@ import { ThemeService } from 'src/app/services/theme/theme.service';
 })
 export class AppComponent {
 
+  public ThemesEnum = Themes;
+  public theme$ = this.themeService.theme$;
+
   constructor(private themeService: ThemeService) {}
 
-  isDarkMode() {
-    console.log('isDarkMode being called.');
-    return this.themeService.isDarkMode();
-  }
+  // isDarkMode() {
+  //   console.log('isDarkMode being called.');
+  //   return this.themeService.isDarkMode();
+  // }
 
-  isOSMode() {
-    console.log('isOSMode called.');
-    return this.themeService.isOSMode();
-  }
+  // isOSMode() {
+  //   console.log('isOSMode called.');
+  //   return this.themeService.isOSMode();
+  // }
 }
