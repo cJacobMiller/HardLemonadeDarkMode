@@ -3,6 +3,7 @@
 header {
   @include use.flex-row-center();
   @include use.box-shadow-lvl1();
+  justify-content: space-between;
 
   padding: 1.5rem;
   color: var(--color-header);

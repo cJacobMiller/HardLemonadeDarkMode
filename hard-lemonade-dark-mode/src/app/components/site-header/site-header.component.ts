@@ -18,7 +18,6 @@ export class SiteHeaderComponent implements OnInit {
       [Themes.LIGHT, 'assets/images/Spectrum_Logo_RGB.png'],
       [Themes.DARK, 'assets/images/Spectrum_Logo_Rev_RGB.png'],
     ]);
-
     this.logoConfig = {
       alt: 'Spectrum Logo',
       sources: logoSources,
