@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme/theme.service';
 import { Themes } from './models/themes';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +12,11 @@ import { tap } from 'rxjs';
 export class AppComponent {
 
   public ThemesEnum = Themes;
-  public theme$ = this.themeService.theme$;
+  public theme$: Observable<Themes> = this.themeService.theme$;
+  //public overrideTheme$: Observable<Themes | null> = this.themeService.overrideTheme$.asObservable();
+  public isNewNavMode$: Observable<boolean> = this.themeService.isNewNavTheme$;
+  public isDarkMode$: Observable<boolean> = this.themeService.isDarkTheme$;
+  public isOsMode$: Observable<boolean> = this.themeService.isOsTheme$;
 
   constructor(private themeService: ThemeService) {}
-
-  // isDarkMode() {
-  //   console.log('isDarkMode being called.');
-  //   return this.themeService.isDarkMode();
-  // }
-
-  // isOSMode() {
-  //   console.log('isOSMode called.');
-  //   return this.themeService.isOSMode();
-  // }
 }

@@ -17,6 +17,7 @@ export class SiteHeaderComponent implements OnInit {
     const logoSources: ThemeImageMap = new Map([
       [Themes.LIGHT, 'assets/images/Spectrum_Logo_RGB.png'],
       [Themes.DARK, 'assets/images/Spectrum_Logo_Rev_RGB.png'],
+      [Themes.LIGHT_BLUE_NAV, 'assets/images/Spectrum_Logo_White_RGB.png'],
     ]);
     this.logoConfig = {
       alt: 'Spectrum Logo',

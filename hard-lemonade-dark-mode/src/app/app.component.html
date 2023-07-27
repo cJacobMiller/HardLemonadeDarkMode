@@ -1,8 +1,9 @@
 <div
   class="site-container"
   [ngClass]="{
-    'dark-mode': (theme$ | async) === ThemesEnum.DARK,
-    'os-theme-mode': (theme$ | async) === ThemesEnum.LIGHT
+    'dark-mode': (isDarkMode$ | async),
+    'new-nav': (isNewNavMode$ | async),
+    'os-theme-mode': (isOsMode$ | async)
   }"
 >
   <app-site-header></app-site-header>

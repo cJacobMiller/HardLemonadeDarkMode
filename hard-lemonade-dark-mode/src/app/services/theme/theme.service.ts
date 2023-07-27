@@ -12,6 +12,7 @@ export class ThemeService {
   // Convenience acces
   public isDarkTheme$: Observable<boolean>;
   public isOsTheme$: Observable<boolean>;
+  public isNewNavTheme$: Observable<boolean>;
   // Theme configured in the OS settings
   public osTheme$: BehaviorSubject<Themes>;
   // Theme selected from dropdown by user
@@ -43,6 +44,7 @@ export class ThemeService {
     }));
     this.isDarkTheme$ = this.theme$.pipe(map(theme => theme === Themes.DARK || theme === Themes.DARK_BLUE_NAV));
     this.isOsTheme$ = this.overrideTheme$.pipe(map(theme => theme === null));
+    this.isNewNavTheme$ = this.theme$.pipe(map(theme => theme === Themes.LIGHT_BLUE_NAV || theme === Themes.DARK_BLUE_NAV));
 
     // Subscribe to changes from Media Query for theme preference
     darkModeQuery.addEventListener(
@@ -64,37 +66,6 @@ export class ThemeService {
 
     return themeDark ? Themes.DARK : Themes.LIGHT;
   }
-
-  /**
-   * Sets theme chosen by user from dropdown
-   * @param theme new theme to set
-   */
-  // public setOverrideTheme(theme: Themes) {
-  //   this.overrideTheme = theme;
-  //   this.theme$.next(theme);
-  //   //this.cdr.detectChanges();
-  // }
-
-  // /**
-  //  * Determine if current theme is a variation of dark mode
-  //  * @returns true if current theme is DARK or DARK_BLUE_NAV
-  //  */
-  // public isDarkMode(): boolean {
-  //   if (this.overrideTheme === Themes.DARK || this.overrideTheme === Themes.DARK_BLUE_NAV) {
-  //     return true;
-  //   }
-  //   console.log(
-  //     'returning',
-  //     this.getOsTheme() === Themes.DARK,
-  //     'from isDarkMode'
-  //   );
-  //   return this.getOsTheme() === Themes.DARK;
-  // }
-
-  // public isOsMode() {
-  //   console.log('returning:', this.overrideTheme === null, 'from isOSMode');
-  //   return this.overrideTheme === null;
-  // }
 
   // Private methods
 

@@ -29,9 +29,7 @@
   --color-link-visited: var(--kite-blue-3);
 }
 // New navigation theme
-@mixin mode-light-blue {
-  @include mode-light;
-  // Override light styles
+@mixin mode-new-nav {
   --color-header: var(--color-white);
   --color-header-bg: var(--color-blue-2);
   --gradient-header-bg: var(--blue-gradient);
@@ -82,9 +80,9 @@ html {
   --kite-light-blue: #b7cee5;
   --light-blue: #{lighten(#0d92ff, 40%)}; // ** NOT a Kite color
   --light-blue2: #aec0d1; // ** NOT a Kite color
-  --light-gradient: linear-gradient(94.26deg,#fff 35.69%,#f8f8f8 98.83%);
-  --blue-gradient: linear-gradient(94.26deg,#02579f 35.69%,#0173d0 98.83%);
-  --dark-gradient: linear-gradient(94.26deg,#002133 35.69%,#004366 98.83%);
+  --light-gradient: linear-gradient(94.26deg, #fff 35.69%, #f8f8f8 98.83%);
+  --blue-gradient: linear-gradient(94.26deg, #02579f 35.69%, #0173d0 98.83%);
+  --dark-gradient: linear-gradient(94.26deg, #002133 35.69%, #004366 98.83%);
   --kite-dark-blue-1: #004366;
   --kite-dark-blue-2: #002133;
   --kite-dark-blue-3: #001019;
@@ -117,8 +115,8 @@ body {
     }
 
     // New navigation theme
-    &.blue-nav {
-      @include mode-light-blue;
+    &.new-nav {
+      @include mode-new-nav;
     }
 
     // Operarting System controlled theme setting (e.g. light/dark for MacOS)

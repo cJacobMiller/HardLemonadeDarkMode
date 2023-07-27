@@ -41,7 +41,7 @@ export class ThemeImageComponent implements OnInit, OnDestroy {
       // get src URL from config based on theme
       const newSrc = this.config.sources.get(theme);
       if (!newSrc) {
-        throw new Error('Theme not found: ' + theme.toString());
+        throw new Error('Theme not found: ' + theme.toString() + ' - ' + this.src);
       }
       this.src = newSrc;
       this.cdr.detectChanges();

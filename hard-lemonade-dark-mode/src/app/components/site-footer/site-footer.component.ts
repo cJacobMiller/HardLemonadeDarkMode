@@ -15,6 +15,7 @@ export class SiteFooterComponent implements OnInit {
     const logoSources: ThemeImageMap = new Map([
       [Themes.LIGHT, 'assets/images/Charter_R_Logo_White_RGB.png'],
       [Themes.DARK, 'assets/images/Charter_R_Logo_Black_RGB.png'],
+      [Themes.LIGHT_BLUE_NAV, 'assets/images/Charter_R_Logo_White_RGB.png'],
     ]);
 
     this.logoConfig = {
