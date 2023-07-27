@@ -15,11 +15,16 @@ export class ThemeService {
   // Theme configured in the OS settings
   public osTheme$: BehaviorSubject<Themes>;
   // Theme selected from dropdown by user
-  public overrideTheme$: BehaviorSubject<Themes | null> = new BehaviorSubject<Themes | null>(null);
+  public overrideTheme$: BehaviorSubject<Themes | null> =
+    new BehaviorSubject<Themes | null>(null);
+  public overrideTheme: Themes | null = null;
 
   private window: Window;
 
-  constructor(private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private cdr: ChangeDetectorRef,
+    @Inject(DOCUMENT) private document: Document
+  ) {
     const windowFromInjectedDocument = this.document.defaultView;
     if (!windowFromInjectedDocument) {
       throw new Error('Cannot get Window');
@@ -27,20 +32,26 @@ export class ThemeService {
     this.window = windowFromInjectedDocument;
 
     // Check for dark mode on load and set initial theme
-    const darkModeQuery = !!this.window.matchMedia && this.window.matchMedia('(prefers-color-scheme: dark');
+    const darkModeQuery =
+      !!this.window.matchMedia &&
+      this.window.matchMedia('(prefers-color-scheme: dark');
     const initialTheme = darkModeQuery.matches ? Themes.DARK : Themes.LIGHT;
     this.osTheme$ = new BehaviorSubject<Themes>(initialTheme);
-    this.theme$ = combineLatest([
-      this.osTheme$,
-      this.overrideTheme$
-    ]).pipe(map(([osTheme, overrideTheme]) => {
-      return overrideTheme ? overrideTheme : osTheme;
-    }));
-    this.isDarkTheme$ = this.theme$.pipe(map(theme => theme === Themes.DARK || theme === Themes.DARK_BLUE_NAV));
-    this.isOsTheme$ = this.overrideTheme$.pipe(map(theme => theme === null));
+    this.theme$ = combineLatest([this.osTheme$, this.overrideTheme$]).pipe(
+      map(([osTheme, overrideTheme]) => {
+        return overrideTheme ? overrideTheme : osTheme;
+      })
+    );
+    this.isDarkTheme$ = this.theme$.pipe(
+      map((theme) => theme === Themes.DARK || theme === Themes.DARK_BLUE_NAV)
+    );
+    this.isOsTheme$ = this.overrideTheme$.pipe(map((theme) => theme === null));
 
     // Subscribe to changes from Media Query for theme preference
-    darkModeQuery.addEventListener('change', this.handleThemeChangeFromMediaQuery.bind(this));
+    darkModeQuery.addEventListener(
+      'change',
+      this.handleThemeChangeFromMediaQuery.bind(this)
+    );
   }
 
   /**
@@ -72,7 +83,10 @@ export class ThemeService {
    * @returns true if current theme is DARK or DARK_BLUE_NAV
    */
   public isDarkMode(): boolean {
-    if (this.overrideTheme === Themes.DARK || this.overrideTheme === Themes.DARK_BLUE_NAV) {
+    if (
+      this.overrideTheme === Themes.DARK ||
+      this.overrideTheme === Themes.DARK_BLUE_NAV
+    ) {
       return true;
     }
     console.log(
