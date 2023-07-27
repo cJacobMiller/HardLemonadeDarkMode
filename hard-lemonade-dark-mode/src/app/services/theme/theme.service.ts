@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ThemeService {
   public currentTheme$: BehaviorSubject<Themes>;
+  public selectedTheme: Themes | null = null;
 
   private window: Window;
 
@@ -41,5 +42,28 @@ export class ThemeService {
     // TODO same as above, handle multiple themes w/new Nav
     const theme = event.matches ? Themes.DARK : Themes.LIGHT;
     this.currentTheme$.next(theme);
+  }
+
+  public invokeThemeChange(theme: Themes) {
+    this.selectedTheme = Themes.DARK;
+    this.currentTheme$?.next(Themes.DARK);
+  }
+
+  public isDarkMode() {
+    if (this.selectedTheme === Themes.DARK) {
+      console.log('returning true from isDarkMode');
+      return true;
+    }
+    console.log(
+      'returning',
+      this.getCurrentTheme() === Themes.DARK,
+      'from isDarkMode'
+    );
+    return this.getCurrentTheme() === Themes.DARK;
+  }
+
+  public isOSMode() {
+    console.log('returning:', this.selectedTheme === null, 'from isOSMode');
+    return this.selectedTheme === null;
   }
 }
