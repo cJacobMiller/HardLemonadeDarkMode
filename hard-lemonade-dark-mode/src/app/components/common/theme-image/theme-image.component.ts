@@ -20,7 +20,7 @@ export class ThemeImageComponent implements OnInit, OnDestroy {
   public src: string = '';
   public alt: string = 'Undefined';
 
-  private currentOsTheme$: Observable<Themes> = of(Themes.LIGHT);
+  private currentTheme$: Observable<Themes> = of(Themes.LIGHT);
   private destroy$: Subject<void> = new Subject();
 
   constructor(private cdr: ChangeDetectorRef, private themeService: ThemeService) {}
@@ -34,10 +34,10 @@ export class ThemeImageComponent implements OnInit, OnDestroy {
 
     // TODO change this to set initial image according to theme
     this.src = this.config.sources.get(Themes.LIGHT) || '';
-    this.currentOsTheme$ = this.themeService.osTheme$;
+    this.currentTheme$ = this.themeService.theme$;
 
     // Subscribe to theme observable and update src on change
-    this.currentOsTheme$.pipe(takeUntil(this.destroy$)).subscribe(theme => {
+    this.currentTheme$.pipe(takeUntil(this.destroy$)).subscribe(theme => {
       // get src URL from config based on theme
       const newSrc = this.config.sources.get(theme);
       if (!newSrc) {
