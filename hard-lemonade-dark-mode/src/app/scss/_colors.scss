@@ -5,6 +5,7 @@
   --color-site-bg: var(--kite-gray-1);
   --color-header: var(--color-text-dark);
   --color-header-bg: var(--kite-white);
+  --gradient-header-bg: var(--light-gradient);
   --color-footer: var(--color-text-light);
   --color-footer-bg: var(--kite-dark-blue-3);
 
@@ -30,31 +31,10 @@
 // New navigation theme
 @mixin mode-light-blue {
   @include mode-light;
-  // Site elements
-  // --color-site: var(--color-text-dark);
-  // --color-site-bg: var(--kite-gray-1);
+  // Override light styles
   --color-header: var(--color-white);
   --color-header-bg: var(--color-blue-2);
-  // --color-footer: var(--color-text-light);
-  // --color-footer-bg: var(--kite-dark-blue-3);
-
-  // Content containers
-  // --color-content1: var(--color-text-dark);
-  // --color-content1-bg: var(--kite-white);
-  // --color-content2-border: var(--kite-gray-1);
-  // --color-content2: var(--color-text-dark);
-  // --color-content2-bg: var(--kite-gray-2);
-  // --color-content2-border: var(--kite-gray-3);
-
-  // Buttons
-  // --color-primary: var(--kite-white);
-  // --color-primary-bg: var(--kite-blue-1);
-  // --color-secondary: var(--kite-blue-1);
-  // --color-secondary-bg: transparent;
-
-  // // Anchors
-  // --color-link: var(--kite-blue-1);
-  // --color-link-visited: var(--kite-blue-3);
+  --gradient-header-bg: var(--blue-gradient);
 }
 
 @mixin mode-dark {
@@ -63,6 +43,7 @@
   --color-site-bg: var(--kite-dark-blue-3);
   --color-header: var(--color-text-light);
   --color-header-bg: var(--kite-dark-blue-2);
+  --gradient-header-bg: var(--dark-gradient);
   --color-footer: var(--color-text-light);
   --color-footer-bg: var(--kite-light-blue);
 
@@ -98,10 +79,12 @@ html {
   --kite-blue-1: #0d92ff;
   --kite-blue-2: #0073d1;
   --kite-blue-3: #0062b2;
-  --kite-blue-gradient: linear-gradient(94.26deg,#02579f 35.69%,#0173d0 98.83%);
   --kite-light-blue: #b7cee5;
   --light-blue: #{lighten(#0d92ff, 40%)}; // ** NOT a Kite color
   --light-blue2: #aec0d1; // ** NOT a Kite color
+  --light-gradient: linear-gradient(94.26deg,#fff 35.69%,#f8f8f8 98.83%);
+  --blue-gradient: linear-gradient(94.26deg,#02579f 35.69%,#0173d0 98.83%);
+  --dark-gradient: linear-gradient(94.26deg,#002133 35.69%,#004366 98.83%);
   --kite-dark-blue-1: #004366;
   --kite-dark-blue-2: #002133;
   --kite-dark-blue-3: #001019;

@@ -4,8 +4,22 @@ header {
   @include use.flex-row-center();
   @include use.box-shadow-lvl1();
   justify-content: space-between;
-
+  margin-bottom: 2rem;
   padding: 1.5rem;
   color: var(--color-header);
   background-color: var(--color-header-bg);
+  background-image: var(--gradient-header-bg);
+
+  > div {
+    flex: 0 0 20vw;
+
+    &.center-column {
+      flex-basis: 50vw;
+      text-align: center;
+    }
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
 }

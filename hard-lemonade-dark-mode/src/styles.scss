@@ -21,4 +21,11 @@ body {
   &-content2 {
     @include use.content-lvl2;
   }
+
+  &-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    font-size: 0.75rem;
+  }
 }

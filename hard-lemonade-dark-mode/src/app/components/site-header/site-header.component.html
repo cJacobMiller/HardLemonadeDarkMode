@@ -1,6 +1,9 @@
 <header>
   <div><!-- empty div to center logo with flexbox --></div>
-  <app-theme-image [config]="logoConfig"></app-theme-image>
-  <app-theme-selector></app-theme-selector>
+  <div class="center-column">
+    <app-theme-image [config]="logoConfig"></app-theme-image>
+  </div>
+  <div>
+    <app-theme-selector></app-theme-selector>
+  </div>
 </header>
-

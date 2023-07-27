@@ -19,12 +19,12 @@ export class ThemeService {
     }
     this.window = windowFromInjectedDocument;
 
-    this.currentTheme$ = new BehaviorSubject<Themes>(Themes.LIGHT);
+    // Check for dark mode on load and set initial theme
+    const darkModeQuery = !!this.window.matchMedia && this.window.matchMedia('(prefers-color-scheme: dark');
+    const initialTheme = darkModeQuery.matches ? Themes.DARK : Themes.LIGHT;
+    this.currentTheme$ = new BehaviorSubject<Themes>(initialTheme);
 
-    // subscribe to changes from Media Query
-    const darkModeQuery =
-      !!this.window.matchMedia &&
-      this.window.matchMedia('(prefers-color-scheme: dark');
+    // Subscribe to changes from Media Query for theme preference
     darkModeQuery.addEventListener('change', this.handleThemeChange.bind(this));
   }
 
