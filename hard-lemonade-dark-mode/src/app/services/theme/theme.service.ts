@@ -22,7 +22,7 @@ export class ThemeService {
   private window: Window;
 
   constructor(
-    private cdr: ChangeDetectorRef,
+    @Inject(DOCUMENT) private cdr: ChangeDetectorRef,
     @Inject(DOCUMENT) private document: Document
   ) {
     const windowFromInjectedDocument = this.document.defaultView;
