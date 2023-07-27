@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   min-height: 100vh;
-  background-color: var(--site-background);
+  color: var(--color-site);
+  background-color: var(--color-site-bg);
 
   app-site-header {
     // note: positioning only here, all appearance contained in the component
@@ -11,6 +12,8 @@
 
   main {
     flex: 1;
+    width: clamp(300px, 69vw, 1800px);
+    margin: 0 auto;
   }
   app-site-footer {
     // note: positioning only here, all appearance contained in the component

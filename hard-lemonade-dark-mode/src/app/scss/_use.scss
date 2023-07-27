@@ -1,7 +1,9 @@
 @use 'colors';
 @use 'typography';
 @use 'mixins';
+@use 'controls';
 
 @forward 'colors';
 @forward 'typography';
 @forward 'mixins';
+@forward 'controls';

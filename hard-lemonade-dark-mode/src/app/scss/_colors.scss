@@ -1,3 +1,94 @@
+// DEFINE COLOR THEMES BELOW
+@mixin mode-light {
+  // Site elements
+  --color-site: var(--color-text-dark);
+  --color-site-bg: var(--kite-gray-1);
+  --color-header: var(--color-text-dark);
+  --color-header-bg: var(--kite-white);
+  --color-footer: var(--color-text-light);
+  --color-footer-bg: var(--kite-dark-blue-3);
+
+  // Content containers
+  --color-content1: var(--color-text-dark);
+  --color-content1-bg: var(--kite-white);
+  --color-content1-border: var(--kite-gray-2);
+  --color-content2: var(--color-text-dark);
+  --color-content2-bg: var(--kite-gray-2);
+  --color-content2-border: var(--kite-gray-3);
+
+  // Buttons
+  --color-primary: var(--kite-white);
+  --color-primary-bg: var(--kite-blue-1);
+  --color-primary-bg-hover: var(--kite-blue-2);
+  --color-secondary: var(--kite-blue-1);
+  --color-secondary-bg: transparent;
+
+  // Anchors
+  --color-link: var(--kite-blue-1);
+  --color-link-visited: var(--kite-blue-3);
+}
+// New navigation theme
+@mixin mode-light-blue {
+  @include mode-light;
+  // Site elements
+  // --color-site: var(--color-text-dark);
+  // --color-site-bg: var(--kite-gray-1);
+  --color-header: var(--color-white);
+  --color-header-bg: var(--color-blue-2);
+  // --color-footer: var(--color-text-light);
+  // --color-footer-bg: var(--kite-dark-blue-3);
+
+  // Content containers
+  // --color-content1: var(--color-text-dark);
+  // --color-content1-bg: var(--kite-white);
+  // --color-content2-border: var(--kite-gray-1);
+  // --color-content2: var(--color-text-dark);
+  // --color-content2-bg: var(--kite-gray-2);
+  // --color-content2-border: var(--kite-gray-3);
+
+  // Buttons
+  // --color-primary: var(--kite-white);
+  // --color-primary-bg: var(--kite-blue-1);
+  // --color-secondary: var(--kite-blue-1);
+  // --color-secondary-bg: transparent;
+
+  // // Anchors
+  // --color-link: var(--kite-blue-1);
+  // --color-link-visited: var(--kite-blue-3);
+}
+
+@mixin mode-dark {
+  // Site elements
+  --color-site: var(--kite-gray-2);
+  --color-site-bg: var(--kite-dark-blue-3);
+  --color-header: var(--color-text-light);
+  --color-header-bg: var(--kite-dark-blue-2);
+  --color-footer: var(--color-text-light);
+  --color-footer-bg: var(--kite-light-blue);
+
+  // Content containers
+  --color-content1: var(--color-text-light);
+  --color-content1-bg: var(--kite-dark-blue-2);
+  --color-content1-border: var(--kite-dark-blue-3);
+  --color-content2: var(--color-text-light);
+  --color-content2-bg: var(--kite-dark-blue-1);
+  --color-content2-border: var(--kite-dark-blue-3);
+
+  // Buttons
+  --color-primary: var(--kite-white);
+  --color-primary-bg: var(--kite-blue-3);
+  --color-primary-bg-hover: var(--kite-blue-1);
+  --color-secondary: var(--kite-white);
+  --color-secondary-bg: transparent;
+
+  // Anchors
+  --color-link: var(--kite-blue-1);
+  --color-link-visited: var(--kite-blue-3);
+}
+// END COLOR THEMES
+
+// Support light and dark color schemes for form control appearance
+// - This lets the browser apply the dark theme to form elements
 :root {
   color-scheme: light dark;
 }
@@ -7,6 +98,7 @@ html {
   --kite-blue-1: #0d92ff;
   --kite-blue-2: #0073d1;
   --kite-blue-3: #0062b2;
+  --kite-blue-gradient: linear-gradient(94.26deg,#02579f 35.69%,#0173d0 98.83%);
   --kite-light-blue: #b7cee5;
   --kite-dark-blue-1: #004366;
   --kite-dark-blue-2: #002133;
@@ -22,88 +114,38 @@ html {
   --kite-gray-3: #63738a;
   --kite-black: #000;
 
-  // Site-wide
+  // Theme-independent styles
   --color-text-light: var(--kite-white);
   --color-text-dark: var(--kite-black);
 }
 
 body {
   background-color: transparent;
-  // background-color: var(--color-site-bg);
-  // color: var(--color-site);
 
   .site-container {
-    // default light mode styles
-    --color-primary: var(--kite-blue-1);
-    --color-secondary: var(--kite-blue-2);
-    --color-tertiary: var(--kite-blue-3);
+    // Default to light mode styles
+    @include mode-light;
 
-    --color-site: var(--color-text-dark);
-    --color-site-bg: var(--kite-gray-1);
-    --color-header: var(--color-text-dark);
-    --color-header-bg: var(--kite-white);
-    --color-footer: var(--color-text-light);
-    --color-footer-bg: var(--kite-dark-blue-3);
-
-    --color-content1: var(--color-text-dark);
-    --color-content1-bg: var(--kite-white);
-    --color-content2: var(--color-text-dark);
-    --color-content2-bg: var(--kite-gray-2);
-
+    // Dark mode colors from: https://chalk.charter.com/display/DIGPLATF0RMS/Step+by+Step+Guide+iOS+page+to+Dark+Mode
     &.dark-mode {
-      --color-primary: var(--kite-dark-blue-1);
-      --color-secondary: var(--kite-dark-blue-2);
-      --color-tertiary: var(--kite-dark-blue-3);
-
-      --color-site: var(--color-text-light);
-      --color-site-bg: var(--kite-dark-blue-3);
-      --color-header: var(--color-text-light);
-      --color-header-bg: var(--kite-dark-blue-2);
-      --color-footer: var(--color-text-light);
-      --color-footer-bg: var(--kite-light-blue);
-
-      --color-content1: var(--color-text-light);
-      --color-content1-bg: var(--kite-dark-blue-2);
-      --color-content2: var(--color-text-light);
-      --color-content2-bg: var(--kite-dark-blue-1);
+      @include mode-dark;
     }
 
+    // New navigation theme
+    &.blue-nav {
+      @include mode-light-blue;
+    }
+
+    // Operarting System controlled theme setting (e.g. light/dark for MacOS)
+    // - uses prefers-color-scheme to detect what theme the OS is using
     &.os-theme-mode {
       @media (prefers-color-scheme: light) {
-        --color-primary: var(--kite-blue-1);
-        --color-secondary: var(--kite-blue-2);
-        --color-tertiary: var(--kite-blue-3);
-
-        --color-site: var(--color-text-dark);
-        --color-site-bg: var(--kite-gray-1);
-        --color-header: var(--color-text-dark);
-        --color-header-bg: var(--kite-white);
-        --color-footer: var(--color-text-light);
-        --color-footer-bg: var(--kite-dark-blue-3);
-
-        --color-content1: var(--color-text-dark);
-        --color-content1-bg: var(--kite-white);
-        --color-content2: var(--color-text-dark);
-        --color-content2-bg: var(--kite-gray-2);
+        @include mode-light;
       }
 
       // Dark mode colors from: https://chalk.charter.com/display/DIGPLATF0RMS/Step+by+Step+Guide+iOS+page+to+Dark+Mode
       @media (prefers-color-scheme: dark) {
-        --color-primary: var(--kite-dark-blue-1);
-        --color-secondary: var(--kite-dark-blue-2);
-        --color-tertiary: var(--kite-dark-blue-3);
-
-        --color-site: var(--color-text-light);
-        --color-site-bg: var(--kite-dark-blue-3);
-        --color-header: var(--color-text-light);
-        --color-header-bg: var(--kite-dark-blue-2);
-        --color-footer: var(--color-text-light);
-        --color-footer-bg: var(--kite-light-blue);
-
-        --color-content1: var(--color-text-light);
-        --color-content1-bg: var(--kite-dark-blue-2);
-        --color-content2: var(--color-text-light);
-        --color-content2-bg: var(--kite-dark-blue-1);
+        @include mode-dark;
       }
     }
   }

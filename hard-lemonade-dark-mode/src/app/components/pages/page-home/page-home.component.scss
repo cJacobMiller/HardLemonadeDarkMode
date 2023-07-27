@@ -1,14 +1,15 @@
 @use "../../../scss/use";
 
 .page-container {
-  display: block;
   @include use.page();
 
   display: flex;
   flex-direction: column;
 
-
   .content-lvl1-example {
     @include use.content-lvl1();
+  }
+  .content-lvl2-example {
+    @include use.content-lvl2;
   }
 }
