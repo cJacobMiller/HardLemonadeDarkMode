@@ -1,5 +1,5 @@
 <app-theme-image [config]="themeSelectorConfig"></app-theme-image>
-<select (change)="themeChange($event)">
+<select>
   <option value="default">----</option>
   <option *ngFor="let theme of themes" [value]="theme.value">
     {{ theme.title }}

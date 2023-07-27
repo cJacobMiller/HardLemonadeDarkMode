@@ -1,7 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme/theme.service';
 import { Themes } from 'src/app/models/themes';
-import { ThemeImage, ThemeImageMap, emptyThemeImage } from 'src/app/models/image';
+import {
+  ThemeImage,
+  ThemeImageMap,
+  emptyThemeImage,
+} from 'src/app/models/image';
 
 @Component({
   selector: 'app-theme-selector',
@@ -31,8 +35,6 @@ export class ThemeSelectorComponent implements OnInit {
       sources: themeSelectorSources,
       width: '2rem', // TODO how to define this in the scss instead?
       height: '',
-    }
+    };
   }
-
-  themeChange = (e: any) => this.themeService.invokeThemeChange(e.target.value);
 }
