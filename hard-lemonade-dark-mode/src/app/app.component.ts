@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme/theme.service';
 import { Themes } from './models/themes';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',

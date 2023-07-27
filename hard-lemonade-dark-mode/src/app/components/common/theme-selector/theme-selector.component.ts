@@ -10,6 +10,7 @@ import { ThemeImage, ThemeImageMap, emptyThemeImage } from 'src/app/models/image
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ThemeSelectorComponent implements OnInit {
+  public selectedTheme: Themes | null = null;
   public themeSelectorConfig: ThemeImage = emptyThemeImage;
 
   themes = [
@@ -34,5 +35,10 @@ export class ThemeSelectorComponent implements OnInit {
     }
   }
 
-  themeChange = (e: any) => this.themeService.invokeThemeChange(e.target.value);
+  public onThemeChange(model: Themes | null) {
+    this.selectedTheme = model;
+    console.log('theme', model, this.selectedTheme);
+
+    this.themeService.overrideTheme$.next(this.selectedTheme);
+  }
 }

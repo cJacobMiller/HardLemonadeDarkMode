@@ -9,6 +9,7 @@ import { PageHomeComponent } from './components/pages/page-home/page-home.compon
 import { PageAboutComponent } from './components/pages/page-about/page-about.component';
 import { ThemeImageComponent } from './components/common/theme-image/theme-image.component';
 import { ThemeSelectorComponent } from './components/common/theme-selector/theme-selector.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ThemeSelectorComponent } from './components/common/theme-selector/theme
     ThemeImageComponent,
     ThemeSelectorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

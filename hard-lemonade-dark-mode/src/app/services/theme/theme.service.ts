@@ -19,7 +19,7 @@ export class ThemeService {
 
   private window: Window;
 
-  constructor(private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {
+  constructor(@Inject(DOCUMENT) private document: Document) {
     const windowFromInjectedDocument = this.document.defaultView;
     if (!windowFromInjectedDocument) {
       throw new Error('Cannot get Window');
@@ -34,7 +34,8 @@ export class ThemeService {
       this.osTheme$,
       this.overrideTheme$
     ]).pipe(map(([osTheme, overrideTheme]) => {
-      return overrideTheme ? overrideTheme : osTheme;
+      const ovTheme: Themes | null = Number(overrideTheme); // TODO Why is this coming through as a string?
+      return ovTheme !== null ? ovTheme : osTheme;
     }));
     this.isDarkTheme$ = this.theme$.pipe(map(theme => theme === Themes.DARK || theme === Themes.DARK_BLUE_NAV));
     this.isOsTheme$ = this.overrideTheme$.pipe(map(theme => theme === null));
@@ -67,26 +68,26 @@ export class ThemeService {
   //   //this.cdr.detectChanges();
   // }
 
-  /**
-   * Determine if current theme is a variation of dark mode
-   * @returns true if current theme is DARK or DARK_BLUE_NAV
-   */
-  public isDarkMode(): boolean {
-    if (this.overrideTheme === Themes.DARK || this.overrideTheme === Themes.DARK_BLUE_NAV) {
-      return true;
-    }
-    console.log(
-      'returning',
-      this.getOsTheme() === Themes.DARK,
-      'from isDarkMode'
-    );
-    return this.getOsTheme() === Themes.DARK;
-  }
+  // /**
+  //  * Determine if current theme is a variation of dark mode
+  //  * @returns true if current theme is DARK or DARK_BLUE_NAV
+  //  */
+  // public isDarkMode(): boolean {
+  //   if (this.overrideTheme === Themes.DARK || this.overrideTheme === Themes.DARK_BLUE_NAV) {
+  //     return true;
+  //   }
+  //   console.log(
+  //     'returning',
+  //     this.getOsTheme() === Themes.DARK,
+  //     'from isDarkMode'
+  //   );
+  //   return this.getOsTheme() === Themes.DARK;
+  // }
 
-  public isOsMode() {
-    console.log('returning:', this.overrideTheme === null, 'from isOSMode');
-    return this.overrideTheme === null;
-  }
+  // public isOsMode() {
+  //   console.log('returning:', this.overrideTheme === null, 'from isOSMode');
+  //   return this.overrideTheme === null;
+  // }
 
   // Private methods
 
