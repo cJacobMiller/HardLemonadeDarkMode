@@ -1,33 +1,56 @@
 @font-face {
-  font-family: 'Rutledge-Medium';
-  src: url('/assets/fonts/rutledge-medium.svg') format('svg'), url('/assets/fonts/rutledge-medium.eot') format('eot'),
-    url('/assets/fonts/rutledge-medium.ttf') format('ttf'), url('/assets/fonts/rutledge-medium.woff') format('woff');
+  font-family: "Rutledge-Medium";
+  src: url("/assets/fonts/rutledge-medium.svg") format("svg"),
+    url("/assets/fonts/rutledge-medium.eot") format("eot"),
+    url("/assets/fonts/rutledge-medium.ttf") format("ttf"),
+    url("/assets/fonts/rutledge-medium.woff") format("woff");
 }
 @font-face {
-  font-family: 'Rutledge-Regular';
-  src: url('/assets/fonts/rutledge-regular.svg') format('svg'), url('/assets/fonts/rutledge-regular.eot') format('eot'),
-    url('/assets/fonts/rutledge-regular.ttf') format('ttf'), url('/assets/fonts/rutledge-regular.woff') format('woff');
+  font-family: "Rutledge-Regular";
+  src: url("/assets/fonts/rutledge-regular.svg") format("svg"),
+    url("/assets/fonts/rutledge-regular.eot") format("eot"),
+    url("/assets/fonts/rutledge-regular.ttf") format("ttf"),
+    url("/assets/fonts/rutledge-regular.woff") format("woff");
 }
 @font-face {
-  font-family: 'Rutledge-Light';
-  src: url('/assets/fonts/rutledge-light.svg') format('svg'), url('/assets/fonts/rutledge-light.eot') format('eot'),
-    url('/assets/fonts/rutledge-light.ttf') format('ttf'), url('/assets/fonts/rutledge-light.woff') format('woff');
+  font-family: "Rutledge-Light";
+  src: url("/assets/fonts/rutledge-light.svg") format("svg"),
+    url("/assets/fonts/rutledge-light.eot") format("eot"),
+    url("/assets/fonts/rutledge-light.ttf") format("ttf"),
+    url("/assets/fonts/rutledge-light.woff") format("woff");
 }
 @font-face {
-  font-family: 'Rutledge-Bold';
-  src: url('/assets/fonts/rutledge-bold.svg') format('svg'), url('/assets/fonts/rutledge-bold.eot') format('eot'),
-    url('/assets/fonts/rutledge-bold.ttf') format('ttf'), url('/assets/fonts/rutledge-bold.woff') format('woff');
+  font-family: "Rutledge-Bold";
+  src: url("/assets/fonts/rutledge-bold.svg") format("svg"),
+    url("/assets/fonts/rutledge-bold.eot") format("eot"),
+    url("/assets/fonts/rutledge-bold.ttf") format("ttf"),
+    url("/assets/fonts/rutledge-bold.woff") format("woff");
 }
 
-body {
-  font-family: 'Rutledge-Regular', sans-serif;
-  font-size: clamp(18px, 1vw, 24px);
+html {
+  // scale base font-size to affect all rem units, less need to clamp elsewhere
+  font-size: clamp(16px, 1.5vw, 28px);
+  body {
+    font-family: "Rutledge-Regular", sans-serif;
 
-  h1, h2, h3, h4, h5 {
-    font-family: 'Rutledge-Bold', sans-serif;
-    margin-top: 0.4em;
-    margin-bottom: 0.3em;
-  }
-  p {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin: 0.4em 0 0.5em 0;
+      font-family: "Rutledge-Bold", sans-serif;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.0rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.25rem; }
+    p {
+      margin: 0.5rem 0 0.75rem 0;
+    }
+    .tagline {
+      font-size: 1.5em;
+    }
   }
 }

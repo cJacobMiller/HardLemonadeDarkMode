@@ -1,22 +1,42 @@
 @use 'mixins';
 
 button {
-  padding: clamp(0.5rem, 0.5vw, 1.5rem) clamp(0.5rem, 0.5vw, 1.5rem);
-  font-size: clamp(0.75rem, 1.5vw, 1.5rem);
-  border: none;
+  padding: 0.5rem 0.85rem;
+  font-size: 1.1rem;
+  border: 0.125rem solid var(--color-primary-bg);
   color: var(--color-primary);
   background-color: var(--color-primary-bg);
-  @extend %border-radius-large;
+  @extend %border-radius-medium;
 
   &:hover {
     background-color: var(--color-primary-bg-hover);
     cursor: pointer;
+  }
+
+  &.secondary {
+    color: var(--color-secondary);
+    background-color: var(--color-secondary-bg);
+    border: 0.125rem solid;
   }
 }
 
 a {
   color: var(--color-link);
   &:visited {
-    color: var(--color-link-visited)
+    color: var(--color-link-visited);
   }
 }
+
+input[type='text'],
+select {
+  width: 100%;
+}
+input[type='checkbox'],
+input[type='radio']
+{
+  + label {
+    display: inline-block;
+    margin: 0 0 0.25rem 0.25rem;
+  }
+}
+

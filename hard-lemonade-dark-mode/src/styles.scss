@@ -1,4 +1,4 @@
-@use 'app/scss/use';
+@use "app/scss/use";
 
 * {
   box-sizing: border-box;
@@ -10,7 +10,15 @@ body {
   margin: 0;
 }
 
-html {
-}
-body {
+.global {
+  &-nowrap {
+    white-space: nowrap;
+  }
+
+  &-content1 {
+    @include use.content-lvl1;
+  }
+  &-content2 {
+    @include use.content-lvl2;
+  }
 }

@@ -4,7 +4,7 @@ header {
   @include use.flex-row-center();
   @include use.box-shadow-lvl1();
 
-  padding: clamp(1rem, 2vw, 2rem);
+  padding: 1.5rem;
   color: var(--color-header);
   background-color: var(--color-header-bg);
 }

@@ -10,41 +10,67 @@
   border-radius: 1rem;
 }
 
+$breakpoints: (
+  'min': 320,
+  'xs': 440,
+  'sm': 600,
+  'md': 840,
+  'lg': 1024,
+  'xl': 1280,
+  'ws': 1440,
+  'hd': 1920
+);
+
+@mixin media-breakpoint-gte($bp) {
+  // TODO how to fix the intellisense error for the '+' here?
+  @media (min-width: map-get($breakpoints, $bp) + 'px') {
+    @content;
+  }
+}
+
+// $clamp-xs: clamp(0.25rem, 0.5vw, 0.75rem);
+// $clamp-sm: clamp(0.5rem, 1vw, 1.5rem);
+// $clamp-md: clamp(0.75rem, 1.5vw, 2rem);
+// $clamp-lg: clamp(1rem, 2vw, 3rem);
+// $clamp-xl: clamp(1.5rem, 3vw, 4rem);
+
 @mixin collapse-first-and-last-padding() {
-  *:first-child {
+  > *:first-child {
     margin-top: 0;
     padding-top: 0;
   }
-  *:last-child {
+  > *:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
   }
 }
 
 @mixin page() {
-  padding: clamp(0.5rem, 2vw, 2rem);
+  padding: 0 2vw;
   @include collapse-first-and-last-padding();
 }
 
 @mixin content-box() {
-  margin: 0 0 clamp(1rem, 2vw, 2rem);
-  padding: clamp(1rem, 1.5vw, 2rem);
+  margin: 0 0 1rem 0;
+  padding: 1rem 1.35rem 1.75rem;
   @extend %border-radius-medium;
   @include collapse-first-and-last-padding();
 }
 
 @mixin content-lvl1 {
   @include content-box();
+  //@include box-shadow-lvl1();
   color: var(--color-content1);
   background-color: var(--color-content1-bg);
-  border: 1px solid var(--color-content1-accent);
+  border: 1px solid var(--color-content1-border);
 }
 
 @mixin content-lvl2() {
   @include content-box();
-  @include box-shadow-lvl2();
+  //@include box-shadow-lvl2();
   color: var(--color-content2);
   background-color: var(--color-content2-bg);
+  border: 1px solid var(--color-content2-border);
 }
 
 @mixin box-shadow-lvl1 {

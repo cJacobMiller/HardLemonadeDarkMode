@@ -22,7 +22,7 @@ export class SiteHeaderComponent implements OnInit {
     this.logoConfig = {
       alt: 'Spectrum Logo',
       sources: logoSources,
-      width: 'clamp(10rem, 25vw, 30rem)', // TODO how to define this in the scss instead?
+      width: '14rem', // TODO how to define this in the scss instead?
       height: '',
     }
   }

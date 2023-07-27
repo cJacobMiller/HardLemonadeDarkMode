@@ -13,8 +13,8 @@
   --color-content1-bg: var(--kite-white);
   --color-content1-border: var(--kite-gray-2);
   --color-content2: var(--color-text-dark);
-  --color-content2-bg: var(--kite-gray-2);
-  --color-content2-border: var(--kite-gray-3);
+  --color-content2-bg: var(--light-blue);
+  --color-content2-border: var(--light-blue2);
 
   // Buttons
   --color-primary: var(--kite-white);
@@ -59,7 +59,7 @@
 
 @mixin mode-dark {
   // Site elements
-  --color-site: var(--kite-gray-2);
+  --color-site: var(--kite-gray-1);
   --color-site-bg: var(--kite-dark-blue-3);
   --color-header: var(--color-text-light);
   --color-header-bg: var(--kite-dark-blue-2);
@@ -82,8 +82,8 @@
   --color-secondary-bg: transparent;
 
   // Anchors
-  --color-link: var(--kite-blue-1);
-  --color-link-visited: var(--kite-blue-3);
+  --color-link: var(--light-blue);
+  --color-link-visited: var(--light-blue2);
 }
 // END COLOR THEMES
 
@@ -100,6 +100,8 @@ html {
   --kite-blue-3: #0062b2;
   --kite-blue-gradient: linear-gradient(94.26deg,#02579f 35.69%,#0173d0 98.83%);
   --kite-light-blue: #b7cee5;
+  --light-blue: #{lighten(#0d92ff, 40%)}; // ** NOT a Kite color
+  --light-blue2: #aec0d1; // ** NOT a Kite color
   --kite-dark-blue-1: #004366;
   --kite-dark-blue-2: #002133;
   --kite-dark-blue-3: #001019;

@@ -20,7 +20,7 @@ export class SiteFooterComponent implements OnInit {
     this.logoConfig = {
       alt: 'Spectrum Logo',
       sources: logoSources,
-      width: 'clamp(6rem, 7vw, 10rem)', // TODO how to define this in the scss instead?
+      width: '8rem', // TODO how to define this in the scss instead?
       height: '',
     }
   }
